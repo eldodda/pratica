@@ -1,0 +1,16 @@
+[
+   {
+      "id": 1,
+      "descricao": "dançar",
+      "status": "A fazer",
+      "createdAt": "02/02/2026, 14:13",
+      "updatedAt": "02/02/2026, 14:13"
+   },
+   {
+      "id": 2,
+      "descricao": "pintar",
+      "status": "A fazer",
+      "createdAt": "02/02/2026, 14:13",
+      "updatedAt": "02/02/2026, 14:14"
+   }
+]
