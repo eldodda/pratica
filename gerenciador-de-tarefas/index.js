@@ -1,6 +1,5 @@
-import { novaTarefa, atualizarTarefa, apagarTarefa } from './functions.js';
+import { exibirTarefas, novaTarefa, atualizarTarefa, apagarTarefa } from './functions.js';
 import readline from 'readline';
-import fs from 'fs';
 
 const input = readline.createInterface({
     input: process.stdin,
@@ -15,12 +14,7 @@ function menu() {
     input.question('=======O que deseja fazer?=======\n[1] VER LISTA DE TAREFAS\n[2] NOVA TAREFA\n[3] ATUALIZAR TAREFAS\n[4] DELETAR TAREFA\n[5] SAIR\n>', (opcao) => {
         switch (Number(opcao)) {
             case 1:
-                fs.readFile('tasks.json', 'utf-8', (erro, dado) => {
-                    if (!erro && dado) {
-                        console.log(JSON.parse(dado));
-                    }
-                menu();
-                });
+                exibirTarefas(input, menu);
                 break;
             case 2:
                 novaTarefa(input, menu);

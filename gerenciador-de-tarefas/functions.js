@@ -5,6 +5,57 @@ const dateForm = new Intl.DateTimeFormat('pt-BR', {
     timeStyle: 'short'
 });
 
+export function exibirTarefas(input, backToMenu) {
+    input.question("=======O que deseja fazer?=======\n[1] Exibir todas as tarefas\n[2] Exibir tarefas a fazer\n[3] Exibir tarefas em andamento\n[4] Exibir tarefas concluídas\n[5] Voltar ao menu principal\n>", (resposta) => {
+        fs.readFile('tasks.json', 'utf-8', (erro, dado) => {
+            let json = [];
+
+            if (!erro && dado) json = JSON.parse(dado);
+
+            switch (Number(resposta)) {
+                case 1:
+                    if (json.length === 0) {
+                        console.log("Nenhuma tarefa encontrada.")
+                    } else {
+                        console.log(json);
+                    }
+                    break;
+                case 2:
+                    let toDo = [];
+                    toDo = json.filter(tarefa => tarefa.status === "A fazer");
+                    if (toDo.length === 0) {
+                        console.log("Nenhuma tarefa neste estado.")
+                    } else {
+                        console.log(toDo);
+                    }
+                    break;
+                case 3:
+                    let onGoing = [];
+                    onGoing = json.filter(tarefa => tarefa.status === "Em andamento");
+                    if (onGoing.length === 0) {
+                        console.log("Nenhuma tarefa neste estado.")
+                    } else {
+                        console.log(onGoing);
+                    }
+                    break;
+                case 4:
+                    let finished = [];
+                    finished = json.filter(tarefa => tarefa.status === "Concluída");
+                    if (finished.length === 0) {
+                        console.log("Nenhuma tarefa neste estado.")
+                    } else {
+                        console.log(finished);
+                    }
+                    break;
+                case 5:
+                    break;
+            }
+            backToMenu();
+        });
+
+    });
+};
+
 
 export function novaTarefa(input, backToMenu) {
     input.question("Insira a descrição da nova tarefa:\n>", (descricao) => {
