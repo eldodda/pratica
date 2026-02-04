@@ -49,6 +49,8 @@ export function exibirTarefas(input, backToMenu) {
                     break;
                 case 5:
                     break;
+                default:
+                    console.log("Entrada inválida.")
             }
             backToMenu();
         });
@@ -117,8 +119,7 @@ export function atualizarTarefa(input, backToMenu) {
                         case '2': novoStatus = 'Em andamento'; break;
                         case '3': novoStatus = 'Concluída'; break;
                         case '4': return backToMenu();
-                        default:
-                            console.log("Opção inválida. Tente novamente.");
+                        default: console.log("Entrada inválida.")
                             return menuStatus();
                     }
 
@@ -163,15 +164,23 @@ export function apagarTarefa(input, backToMenu) {
                 console.log("Tarefa não encontrada!");
                 return backToMenu();
             }
-
-            const updatedList = json.filter(tarefa => tarefa.id !== taskDel.id);
-            fs.writeFile('tasks.json', JSON.stringify(updatedList, null, 3), (erro) => {
-                if (erro) {
-                    console.log("Erro ao deletar. Tente novamente.");
-                    backToMenu();
+            input.question(`Deseja excluir "${taskDel.descricao}"?\n[1] Sim\n[2] Não\n>`, (response) => {
+                if (Number(response) === 1) {
+                    const updatedList = json.filter(tarefa => tarefa.id !== taskDel.id);
+                    fs.writeFile('tasks.json', JSON.stringify(updatedList, null, 3), (erro) => {
+                        if (erro) {
+                            console.log("Erro ao deletar. Tente novamente.");
+                            backToMenu();
+                        } else {
+                            console.log(`Tarefa "${taskDel.descricao}" deletada com sucesso!`);
+                            backToMenu();
+                        }
+                    });
+                } else if (Number(response) === 2) {
+                    apagarTarefa(input, backToMenu);
                 } else {
-                    console.log(`Tarefa "${taskDel.descricao}" deletada com sucesso!`);
-                    backToMenu();
+                    console.log("Entrada inválida.");
+                    apagarTarefa(input, backToMenu);
                 }
             });
         });
