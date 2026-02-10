@@ -25,3 +25,5 @@ As tarefas são armazenadas como objetos com a seguinte estrutura:
   "createdAt": "2024-05-20T10:00:00Z",
   "updatedAt": "2024-05-20T10:30:00Z"
 }
+
+**URL do projeto:** https://github.com/eldodda/pratica/tree/main/gerenciador-de-tarefas
