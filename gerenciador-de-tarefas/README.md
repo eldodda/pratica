@@ -1,4 +1,4 @@
-# 📝 Task Manager CLI (tsk-mngr)
+# 📝 Task Tracker CLI (https://roadmap.sh/projects/task-tracker)
 
 Um projeto prático de **CRUD** (Create, Read, Update, Delete) simples para gerenciamento de tarefas via terminal, utilizando persistência de dados em arquivo JSON.
 
