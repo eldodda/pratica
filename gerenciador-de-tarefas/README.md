@@ -1,4 +1,4 @@
-# 📝 Task Manager CLI (tsk-mngr)
+# 📝 Task Tracker CLI (https://roadmap.sh/projects/task-tracker)
 
 Um projeto prático de **CRUD** (Create, Read, Update, Delete) simples para gerenciamento de tarefas via terminal, utilizando persistência de dados em arquivo JSON.
 
@@ -12,6 +12,9 @@ Um projeto prático de **CRUD** (Create, Read, Update, Delete) simples para gere
   - `Concluída`
 - **Remover tarefa:** Exclui uma tarefa específica pelo ID.
 - **Timestamp:** Registro automático de data/hora de criação e de modificação.
+
+**URL do projeto:** https://github.com/eldodda/pratica/tree/main/gerenciador-de-tarefas
+
 
 ## 🛠️ Detalhes Técnicos
 

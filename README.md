@@ -6,8 +6,7 @@ Este repositório foi criado para centralizar todos os meus projetos de estudo, 
 
 Cada pasta dentro deste repositório representa um projeto ou uma trilha de estudos específica:
 
-* **`tsk-mngr/`**: Um gerenciador de tarefas (Task Manager) para praticar lógica de programação e manipulação de dados.
-* *(Adicione novos projetos aqui conforme for criando)*
+* **`gerenciador-de-tarefas`**: Um gerenciador de tarefas (Task Manager) para praticar lógica de programação e manipulação de dados. (Concluído como desafio do roadmap.sh: https://roadmap.sh/projects/task-tracker)
 
 ## 🛠️ Tecnologias Utilizadas
 
